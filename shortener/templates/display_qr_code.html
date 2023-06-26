@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- QR Code display page -->>
+<div class="container">
+    <section class="section">
+        <div class="section-a">
+            <h3 class="blue-grey-text text-lighten-1">QR Code</h3>
+        </div>
+    </section>
+    <section class="section">
+        <div class="section-b">
+            <div style="margin: 3% auto 3% auto; border: 3px solid orangered;">
+                <img style="margin: auto;" src="{{ url_for('static', filename='/images/qrcode.png') }}" alt="QR Code image">
+            </div>
+        </div>
+    </section>
+
+    <a href="{{ url_for('static', filename='/images/qrcode.png') }}" class="btn btn-primary" download="qr_code image">Download Image</a> 
+</div>
+  
+{% endblock %}

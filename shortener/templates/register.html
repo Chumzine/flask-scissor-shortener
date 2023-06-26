@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Page with the form to register a new user -->
+    <!-- Title -->
+    <section class="section">
+        <div class="section-a">
+            <h3 class="blue-grey-text text-lighten-1">Create an account!</h3>
+        </div>
+    </section>
+    <!-- Form -->
+    <section class="section">
+        <div class="section-b">
+            <div class="container">
+                <div class="row">
+                    <form class="col s12" method="POST" action="">
+                            {{ form.hidden_tag() }}
+                        <div class="row" >
+                            {{ form.first_name(class="input-field col s6") }} 
+                            {{ form.last_name(class="input-field col s6") }}
+                        </div>
+                        <div class="row">
+                            {{ form.username(class="input-field col s12") }}
+                        </div>
+                        <div class="row" >
+                            {{ form.email(class="input-field col s12") }}
+                        </div>
+                        <div class="row">
+                            {{ form.password(class="input-field col s12") }}
+                        </div>
+                        <div class="btn">
+                            {{ form.submit(class="btn waves-effect waves-light") }} 
+                        </div>
+                    </form>
+                  </div>    
+            </div>         
+        </div>
+    </section>
+    
+    <a href="{{url_for('auth.login')}}">Already have an account? Log In</a>
+
+{% endblock %}
+    

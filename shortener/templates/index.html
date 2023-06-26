@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Home page -->
+<div class="container">
+    <!-- For authenticated user -->>
+    {% if current_user.is_authenticated %}
+        <section class="section">
+            <div class="section-a">
+                <h3 class="head blue-grey-text text-darken-2">Welcome to Scissor, {{ current_user.username }}!</h3>
+            </div>
+        </section>
+        <section class="section">
+            <div class="section-b">
+                <p class="text grey-text text-darken-3">Now let's get you started.</p>
+                <p class="text grey-text text-darken-3">Click on the links in the navigation bar and let's make magic.</p> 
+            </div>
+        </section>
+    <!-- For unauthenticated user -->
+    {% else %}
+        <section class="section">
+            <div class="section-a">
+                <h3 class="head blue-grey-text text-darken-2">Welcome to Scissor!</h3>
+            </div>
+        </section>
+        <section class="section">
+            <div class="section-b">
+                <p class="text grey-text text-darken-3">This is a simple URL shortener web app built with Flask and SQLite.</p>
+                <p class="text grey-text text-darken-3">You can generate a QR code for your URL, shorten your URL, and view the stats of your URL.</p>
+                <p class="text grey-text text-darken-3">You can also register and login to view your shortened URLs.</p>
+                <p class="text grey-text text-darken-3">Click on the links in the navigation bar to get started.</p> 
+            </div>
+        </section>
+    {% endif %}
+</div>
+
+{% endblock %}
+    

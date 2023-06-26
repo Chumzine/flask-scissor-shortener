@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Page to display the shortened URL -->>
+{% if shortened_url %}
+  <section class="section">
+    <div class="container">
+      <div class="section-a">
+        <h3 class="blue-grey-text text-lighten-1">Your shortened URL</h3>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="section-b">
+      <div class="container">
+        <div class="row">
+            <label for="original_url">Original URL</label>
+            <div class="input-field col s12">
+              <input disabled value="{{ original_url }}" id="disabled" type="text" class="validate">
+            </div>
+        </div>
+        <div class="row">
+            <label for="new_url">New URL</label>
+            <div class="input-field col s12">
+              <input value="{{ shortened_url }}" id="new_url" type="text" class="validate">
+            </div>
+        </div>
+    </div>
+    </div>
+  </section>
+    
+{% endif %}
+{% endblock %}
+

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Page with the statistics and history -->
+    <!-- Title -->
+    <section class="section">
+        <div class="section-a">
+            <div class="container">
+                <h3 class="blue-grey-text text-lighten-1">Stats</h3>
+            </div>
+        </div>
+    </section>
+    <!-- Table -->
+    <section class="section">
+        <div class="section-b">
+            <div class="container">
+                <table class="highlight" >
+                    <thead>
+                      <tr>
+                          <th>Original URL</th>
+                          <th>Short URL</th>
+                          <th>Visits</th>
+                      </tr>
+                    </thead>
+                
+                    <tbody>
+                        {% for link in links %}
+                        <tr>
+                            <td>{{ link.original_url }}</td>
+                            <td>{{ url_for('shorts.redirect_url', short_url=link.short_url, _external=True) }}</td>
+                            <td>{{ link.visits }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+            
+                    <tfoot>
+                        <tr>
+                            <th>Original URL</th>
+                            <th>Short URL</th>
+                            <th>Visits</th>
+                        </tr>
+                    </tfoot>
+                  </table>
+            </div> 
+        </div>
+    </section>
+
+{% endblock %}
+

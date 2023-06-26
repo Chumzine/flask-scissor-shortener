@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Compiled and minified CSS -->
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+
+        <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+        <title>Scissor</title>
+    </head>
+    <body>
+        <!--Navbar goes here-->       
+        <div class="navbar-fixed">
+            <nav class="nav-extended white">
+                <div class="nav-wrapper white">
+                    <ul>
+                    <li>
+                        <span class="title grey-text text-darken-1">Scissor</span>
+                    </li>
+                    <li>
+                        <img src="{{url_for('static', filename='/logo/scissor-img2.jpg')}}"
+                            alt="logo" class="circle"
+                        />
+                    </li>
+                    </ul>
+                </div>
+                <div class="nav-wrapper nav-2">
+                    {% if current_user.is_authenticated %} 
+                        <!-- Dropdown Trigger -->
+                        <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Create</a>
+
+                        <!-- Dropdown Structure -->
+                        <ul id='dropdown1' class='dropdown-content'>
+                            <li><a href="{{ url_for('shorts.link') }}" class="center">url</a></li>
+                            <li class="divider"></li>
+                            <li><a href="{{ url_for('qrcode.generate_qr_code') }}" class="center">qrcode</a></li>
+                        </ul>
+                    {% endif %}
+                </div>
+            </nav>
+        </div>
+        <ul class="side-nav fixed floating transparent z-depth-0">
+            {% if current_user.is_authenticated %}
+                <li>
+                    <a href="{{url_for('shorts.index')}}">Home</a>
+                </li>
+                <li><div class="divider"></div></li>
+                <li>
+                    <a href="{{url_for('shorts.stats')}}">Analytics</a>
+                </li>
+                <li><div class="divider"></div></li>
+                <li>
+                    <a href="{{url_for('auth.logout')}}">Logout</a>
+                </li>
+            {% else %}
+                <li>
+                    <a href="{{url_for('shorts.index')}}">Home</a>
+                </li>
+                <li><div class="divider"></div></li>
+                <li>
+                    <a href="{{url_for('auth.register')}}">Register</a>
+                </li>
+                <li><div class="divider"></div></li>
+                <li>
+                    <a href="{{url_for('auth.login')}}">Login</a>
+                </li>
+            {% endif %}
+        </ul>
+        <!-- Navbar ends here -->
+            <div>
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul class=flashes>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                    </ul> 
+                {% endif %}
+                {% endwith %} 
+            </div>
+
+            {% block content %}
+            
+
+            {% endblock %}
+        <!-- Footer -->
+        <footer class="page-footer">
+            <div class="container">
+              <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Features</h5>
+                    <p class="grey-text text-lighten-4">URL Shortening</p>
+                    <p class="grey-text text-lighten-4">QR Code Generation</p>
+                    <p class="grey-text text-lighten-4">Analytics & History</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                  <h5 class="white-text">Meet the developer</h5>
+                  <ul>
+                    <li><a class="grey-text text-lighten-3" href="https://github.com/Chumzine">GitHub</a></li>
+                    <li><a class="grey-text text-lighten-3" href="https://twitter.com/Chumzine">Twitter</a></li>
+                    <li><a class="grey-text text-lighten-3" href="https://www.linkedin.com/in/she-adaobi-chuma-okeke-3677a9140/">LinkedIn</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="footer-copyright">
+              <div class="container">
+                &copy;Scissor <script>
+                    document.write(new Date().getFullYear())
+                </script>
+              </div>
+            </div>
+          </footer>
+        <!-- End of Footer -->
+    </body>
+    <!-- Compiled and minified Jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+    <script>
+        $(document).ready(function () {
+          $(".dropdown-trigger").dropdown();
+        })
+    </script>
+
+</html>
