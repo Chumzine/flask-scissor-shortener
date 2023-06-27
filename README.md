@@ -227,7 +227,7 @@ Project Link: [https://github.com/Chumzine/flask-scissor-shortener](https://gith
 [issues-shield]: https://img.shields.io/github/issues/Chumzine/flask-scissor-shortener.svg?style=for-the-badge
 [issues-url]: https://github.com/Chumzine/flask-scissor-shortener/issues
 [license-shield]: https://img.shields.io/github/license/Chumzine/flask-scissor-shortener.svg?style=for-the-badge
-[license-url]: https://github.com/Chumzine/flask-scissor-shortener/blob/main/LICENSE.txt
+[license-url]: https://github.com/Chumzine/flask-scissor-shortener/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/she-adaobi-chuma-okeke-3677a9140
 [twitter-shield]: https://img.shields.io/badge/-@chumzine-1ca0f1?style=for-the-badge&logo=twitter&logoColor=white&link=https://twitter.com/chumzine
