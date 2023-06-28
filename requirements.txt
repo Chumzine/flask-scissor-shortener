@@ -41,6 +41,6 @@ segno==1.5.2
 SQLAlchemy==2.0.15
 tomli==2.0.1
 typing_extensions==4.6.2
-Werkzeug==2.3.6
+Werkzeug==2.2.3
 wrapt==1.15.0
 WTForms==3.0.1
