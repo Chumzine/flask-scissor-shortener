@@ -7,6 +7,7 @@ from .qr_code.qr_code import qrcode
 from .auth.routes import auth
 from .models.users import User
 from .models.links import Link
+from dotenv import load_dotenv
 
 
 
@@ -28,6 +29,8 @@ def create_app(config=config_dict['dev']):
     migrate = Migrate(app, db, render_as_batch=True)
 
     limiter.init_app(app)
+
+    load_dotenv()
 
 
     app.register_blueprint(shorts)
