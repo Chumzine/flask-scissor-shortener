@@ -18,7 +18,7 @@ def create_app(config=config_dict['dev']):
 
     app.config['CACHE_TYPE'] = 'SimpleCache'
 
-    app.config['RATELIMIT_STORAGE_URL'] = 'redis://localhost:6379' 
+    app.config['RATELIMIT_STORAGE_URL'] = 'redis://default:fbthKVsL48xnHQJWiT6kS8PZ0PqzXreU@redis-14288.c114.us-east-1-4.ec2.cloud.redislabs.com:14288' 
 
     db.init_app(app)
 

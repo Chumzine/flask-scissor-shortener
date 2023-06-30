@@ -44,10 +44,10 @@ def redirect_url(short_url):
         db.session.commit()
         return redirect(link.original_url)
 
-    else:
-        return
-        flash('Invalid URL')
-        return redirect(url_for('link'))
+    # return
+    flash('Invalid URL')
+    return redirect(url_for('shorts.link'))
+    
 
 
 

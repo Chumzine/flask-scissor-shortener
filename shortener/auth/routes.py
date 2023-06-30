@@ -1,4 +1,4 @@
-from flask_login import logout_user, current_user, login_required
+from flask_login import logout_user, current_user, login_required, login_user
 from werkzeug.security import generate_password_hash, check_password_hash
 from ..extensions import db, login_manager, limiter
 from flask import Blueprint, render_template, request, redirect, url_for, flash
@@ -73,21 +73,22 @@ def register():
 @limiter.limit("100/hour")
 def login():
     form = LoginForm()
-    if form.validate_on_submit():
-        user = User.query.filter_by(
-            username=form.username.data).first()
+    if request.method == 'POST':
+        if form.validate_on_submit():
+            user = User.query.filter_by(
+                username=form.username.data).first()
 
-        if user:
-            if check_password_hash(user.password_hash, form.password.data):
-                login_user(user)
-                flash('You were successfully logged in')
-                return redirect(url_for('shorts.index'))
+            if user:
+                if check_password_hash(user.password_hash, form.password.data):
+                    login_user(user)
+                    flash('You were successfully logged in')
+                    return redirect(url_for('shorts.index'))
+                else:
+                    flash('Invalid username or password')
+                    return redirect(url_for('auth.login'))
             else:
                 flash('Invalid username or password')
-                return redirect(url_for('login'))
-        else:
-            flash('Invalid username or password')
-            return redirect(url_for('login'))
+                return redirect(url_for('auth.login'))
     return render_template('login.html', form=form)
 
 

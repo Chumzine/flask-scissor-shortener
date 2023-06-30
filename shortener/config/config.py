@@ -4,16 +4,16 @@ from decouple import config
 from datetime import timedelta
 
 
-redis_url = os.getenv('redis_url')
+redis_url = os.getenv('storage_uri')
 
 
 BASE_DIR = os.path.dirname(os.path.realpath(__file__))
 
 
 
-uri = config('DATABASE_URL')
-if uri.startswith('postgres://'):
-    uri = uri.replace('postgres://', 'postgresql://', 1)
+# uri = config('DATABASE_URL')
+# if uri.startswith('postgres://'):
+#     uri = uri.replace('postgres://', 'postgresql://', 1)
 
 
 
@@ -34,7 +34,7 @@ class TestConfig(Config):
     SQLALCHEMY_DATABASE_URI = 'sqlite://'
 
 class ProdConfig(Config):
-    SQLALCHEMY_DATABASE_URI = uri
+    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URI')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     DEBUG = config('DEBUG', False, cast=bool)
     
