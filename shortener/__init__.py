@@ -45,4 +45,7 @@ def create_app(config=config_dict['dev']):
             'Link': Link
         }
 
+    with app.app_context():
+        db.create_all()
+
     return app
