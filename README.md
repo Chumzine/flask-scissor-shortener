@@ -47,7 +47,7 @@
       </ul>
     </li>
     <li>
-      <a href="#clonining-this-project">Cloning This Project</a>
+      <a href="#cloning-this-project">Cloning This Project</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
