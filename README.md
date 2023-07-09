@@ -42,6 +42,9 @@
       <a href="#what-i-learnt">What I Learnt</a></li>
     <li>
       <a href="#how-to-use">How to Use</a>
+      ul>
+        <li><a href="#sample">Sample Screenshots</a></li>
+      </ul>
     </li>
     <li>
       <a href="#clonining-this-project">Cloning This Project</a>
@@ -119,7 +122,7 @@ Working on this project was amazing. I got to learn a lot of new concepts and im
 
 To run this application, follow these steps:
 
-1. Open this link on your browser, https://flask-scissor-shortener-eafb8793d768.herokuapp.com
+1. Open this link on your browser, https://scissad.me/ or https://scissor-flask-app.onrender.com/ 
    
 2. Create a user account or log in if you already have an account;
    *To create an account: Click on 'Register' in the side navigation bar to open up a registration form*
@@ -133,6 +136,21 @@ To run this application, follow these steps:
 6. Click on 'Analytics' in the side navigation bar to see your links history and track the number of clicks on your shortened URL.
  
 7. You may now log out using the 'Logout' option in the side navigation bar.
+
+
+
+## Sample Screenshots
+![2023-06-28](https://github.com/Chumzine/flask-scissor-shortener/assets/86481843/5ff32f53-6cd0-45e0-bb97-176377f456fe)
+
+![Screenshot 2023-07-09 203505](https://github.com/Chumzine/flask-scissor-shortener/assets/86481843/4e294083-72be-4adc-8192-95d7c6e2d161)
+
+![Screenshot 2023-07-09 203525](https://github.com/Chumzine/flask-scissor-shortener/assets/86481843/52223bc9-7242-451f-9dab-0b30f5df5753)
+
+![Screenshot 2023-07-09 203557](https://github.com/Chumzine/flask-scissor-shortener/assets/86481843/abe97e67-2b96-45b9-9c55-bb89bf685263)
+
+![Screenshot 2023-07-09 205048](https://github.com/Chumzine/flask-scissor-shortener/assets/86481843/c620da4c-6d77-4de1-a071-9a8c7fb4bcee)
+
+
 
 <p align="right"><a href="#readme-top">back to top</a></p>
 
